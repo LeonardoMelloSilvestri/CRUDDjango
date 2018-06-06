@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Novo Produto</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container-fluid py-3">
+    <div class="row justify-content-center">
+        <div class="col-lg-7 col-xlg-9 col-md-8">
+            <div class="card">                            
+                <center><h3 class="card-title m-t-10">Cadastro de Produto</h3></center>                
+                <form method="POST" class="form-horizontal">
+                    <div class="form-group">                      	
+                        <div class="col-md-12">
+                        		{% csrf_token %}
+                            {{ form.as_p }}
+                        </div>
+                    </div>                 
+                    <div class="form-row text-center">
+                        <div class="col-sm-12">
+                            <button type="submit" class="btn btn-lg btn-primary btn-block">Cadastrar</button>
+                            <a href="{% url 'lista_produto' %}" class="btn btn-danger btn-lg btn-block">Voltar</a>
+                        </div>                        
+                    </div>                                    
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

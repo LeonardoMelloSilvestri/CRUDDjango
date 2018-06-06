@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bem Vindo!</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+	  <h1 class="text-center">Produtos</h1>	     
+	  <table class="table table-light table-striped">
+	    <thead class="thead-dark">
+	      <tr>
+	        <th><b>Nome</b></th>
+	        <th><b>Marca</b></th>
+	        <th><b>Quantidade</b></th>
+	        <th><b>Ações</b></th>
+	        <th><b>Ações</b></th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	    	{% for produto in produtos %}
+	    		<tr>
+	    			<td><b>{{ produto.nome }}</b></td>
+	    			<td><b>{{ produto.marca }}</b></td>
+	    			<td><b>{{ produto.quantidade }}</b></td>
+	    			<td><a href="{% url 'editar_produto' produto.id %}" class="btn btn-success">Editar</a></td>
+	    			<td><a href="{% url 'excluir_produto' produto.id %}" class="btn btn-danger">Excluir</a></td>
+	    		</tr>	   		
+	    	{% endfor %}
+	    </tbody>	    
+	  </table>
+	 <a href="{% url 'novo_produto' %}" class="btn btn-primary">Novo Produto</a>
+	</div>	
+</body>
+</html>
